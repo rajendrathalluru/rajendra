@@ -25,23 +25,70 @@
   </head>
   <body>
     <div class="noise"></div>
-    <main class="shell">
-      <section class="hero panel">
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#home">
+          <span class="brand-dot"></span>
+          <span>rajendra.sys</span>
+        </a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell" id="home">
+      <section class="hero panel reveal">
         <div class="prompt-line">
           <span class="prompt-user">rajendra@uic</span>
           <span class="prompt-path">~/portfolio</span>
-          <span class="prompt-cmd">$ ./launch-profile.sh</span>
+          <span class="prompt-cmd">$ ./launch-profile.sh --mode public</span>
         </div>
 
         <div class="hero-grid">
-          <div>
+          <div class="hero-copy-block">
             <p class="eyebrow">Linux Systems Professional View</p>
-            <h1>Rajendra Thalluru</h1>
+            <h1>Building calm, fast, production-ready systems.</h1>
             <p class="hero-copy">
-              Software engineer building backend systems, Linux-native tooling,
-              distributed services, and applied AI platforms with a production
-              mindset.
+              I’m Rajendra Thalluru, a software engineer focused on Linux-native
+              infrastructure, backend systems, distributed services, and
+              practical AI tooling. I care about measurable performance,
+              reliability under load, and clean engineering execution.
             </p>
+
+            <div class="cta-row">
+              <a
+                class="button button-primary"
+                href="https://drive.google.com/file/d/1tvKIZJW0YxKK-VcnJDu019Dh61XsurV-/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Resume
+              </a>
+              <a class="button button-secondary" href="#projects">Explore Projects</a>
+              <a class="button button-ghost" href="mailto:rajendrathallurus@gmail.com">Contact Me</a>
+            </div>
+
+            <div class="signal-strip">
+              <div class="signal-card">
+                <span class="signal-label">Current</span>
+                <strong>Research Assistant, UIC P4 Lab</strong>
+              </div>
+              <div class="signal-card">
+                <span class="signal-label">Strength</span>
+                <strong>Linux, Networking, Backend, AI</strong>
+              </div>
+              <div class="signal-card">
+                <span class="signal-label">Education</span>
+                <strong>MS CS, UIC, GPA 4.0</strong>
+              </div>
+            </div>
 
             <div class="boot-log" aria-label="Boot log summary">
               <div><span>[ OK ]</span> Kernel profile loaded: backend + systems + AI</div>
@@ -51,66 +98,97 @@
             </div>
           </div>
 
-          <aside class="contact-card">
-            <div class="card-label">system.identity</div>
-            <ul>
-              <li><span>email</span><a href="mailto:rajendrathallurus@gmail.com">rajendrathallurus@gmail.com</a></li>
-              <li><span>phone</span><a href="tel:+18728990823">+1 872-899-0823</a></li>
-              <li><span>resume</span><a href="https://drive.google.com/file/d/1tvKIZJW0YxKK-VcnJDu019Dh61XsurV-/view?usp=sharing" target="_blank" rel="noreferrer">View Resume</a></li>
-              <li><span>linkedin</span><a href="https://www.linkedin.com/in/rajendra-thalluru/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><span>github</span><a href="https://github.com/rajendrathalluru" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><span>writing</span><a href="https://rajendrathalluru.medium.com/" target="_blank" rel="noreferrer">Medium</a></li>
-            </ul>
+          <aside class="hero-sidebar" id="contact">
+            <section class="contact-card">
+              <div class="card-label">system.identity</div>
+              <ul>
+                <li><span>email</span><a href="mailto:rajendrathallurus@gmail.com">rajendrathallurus@gmail.com</a></li>
+                <li><span>phone</span><a href="tel:+18728990823">+1 872-899-0823</a></li>
+                <li><span>resume</span><a href="https://drive.google.com/file/d/1tvKIZJW0YxKK-VcnJDu019Dh61XsurV-/view?usp=sharing" target="_blank" rel="noreferrer">Public Link</a></li>
+                <li><span>linkedin</span><a href="https://www.linkedin.com/in/rajendra-thalluru/" target="_blank" rel="noreferrer">Profile</a></li>
+                <li><span>github</span><a href="https://github.com/rajendrathalluru" target="_blank" rel="noreferrer">Repositories</a></li>
+                <li><span>medium</span><a href="https://rajendrathalluru.medium.com/" target="_blank" rel="noreferrer">Writing</a></li>
+              </ul>
+            </section>
+
+            <section class="terminal-card">
+              <div class="card-label">live.stats</div>
+              <div class="terminal-lines">
+                <div><span>$</span> whoami</div>
+                <div class="terminal-output">Rajendra Thalluru</div>
+                <div><span>$</span> cat focus.txt</div>
+                <div class="terminal-output">distributed systems, linux networking, backend services</div>
+                <div><span>$</span> uptime</div>
+                <div class="terminal-output" id="uptime">uptime 00:00:00</div>
+              </div>
+            </section>
           </aside>
         </div>
       </section>
 
-      <section class="panel two-column">
-        <div>
-          <div class="section-title">$ cat education.log</div>
-          <article class="entry">
-            <header>
-              <h2>University of Illinois Chicago</h2>
-              <span>Aug 2024 - May 2026</span>
-            </header>
-            <p>Master of Science in Computer Science</p>
-            <p class="muted">GPA: 4.0/4.0 | Chicago, Illinois</p>
-            <p class="muted">
-              Coursework: Computer Algorithms, Network Operating Systems and
-              Programming, Advanced Computer Networks, Database Systems, NLP,
-              Query Processing in Database Systems.
-            </p>
-            <p class="muted">
-              Activities: UIC ACM Systems Chapter Lead, UIC Google Developer
-              Student Club Platform Team Head.
-            </p>
-          </article>
+      <section class="panel intro-panel reveal" id="about">
+        <div class="section-heading">
+          <p class="section-kicker">About</p>
+          <h2>System mindset with application-level impact.</h2>
         </div>
+        <div class="two-column">
+          <div>
+            <div class="section-title">$ cat education.log</div>
+            <article class="entry">
+              <header>
+                <h3>University of Illinois Chicago</h3>
+                <span>Aug 2024 - May 2026</span>
+              </header>
+              <p>Master of Science in Computer Science</p>
+              <p class="muted">GPA: 4.0/4.0 | Chicago, Illinois</p>
+              <p class="muted">
+                Coursework: Computer Algorithms, Network Operating Systems and
+                Programming, Advanced Computer Networks, Database Systems, NLP,
+                Query Processing in Database Systems.
+              </p>
+              <p class="muted">
+                Activities: UIC ACM Systems Chapter Lead, UIC Google Developer
+                Student Club Platform Team Head.
+              </p>
+            </article>
+          </div>
 
-        <div>
-          <div class="section-title">$ uname -a</div>
-          <div class="facts-grid">
-            <div class="fact">
-              <span class="fact-key">kernel</span>
-              <strong>Linux / UNIX</strong>
+          <div>
+            <div class="section-title">$ uname -a</div>
+            <div class="facts-grid">
+              <div class="fact">
+                <span class="fact-key">kernel</span>
+                <strong>Linux / UNIX</strong>
+              </div>
+              <div class="fact">
+                <span class="fact-key">focus</span>
+                <strong>Distributed Systems</strong>
+              </div>
+              <div class="fact">
+                <span class="fact-key">runtime</span>
+                <strong>Python, Go, Java</strong>
+              </div>
+              <div class="fact">
+                <span class="fact-key">infra</span>
+                <strong>AWS, Docker, Kubernetes</strong>
+              </div>
             </div>
-            <div class="fact">
-              <span class="fact-key">focus</span>
-              <strong>Distributed Systems</strong>
-            </div>
-            <div class="fact">
-              <span class="fact-key">runtime</span>
-              <strong>Python, Go, Java</strong>
-            </div>
-            <div class="fact">
-              <span class="fact-key">infra</span>
-              <strong>AWS, Docker, K8s</strong>
+            <div class="about-note">
+              <p>
+                I’m strongest in environments where systems behavior matters:
+                concurrency, networking, infrastructure efficiency, debugging,
+                deployment, and production observability.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel reveal">
+        <div class="section-heading">
+          <p class="section-kicker">Toolchain</p>
+          <h2>What I build with.</h2>
+        </div>
         <div class="section-title">$ ls /opt/skills</div>
         <div class="skills-board">
           <div class="skill-group">
@@ -132,16 +210,20 @@
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel reveal" id="experience">
+        <div class="section-heading">
+          <p class="section-kicker">Experience</p>
+          <h2>Production work across systems, platform, and backend engineering.</h2>
+        </div>
         <div class="section-title">$ journalctl --unit experience.service</div>
         <div class="timeline">
           <article class="timeline-item">
             <div class="timeline-meta">Jul 2025 - Present | UIC</div>
             <h3>Research Assistant - Intrusion Detection System (P4, Linux, Datacenter)</h3>
             <ul>
-              <li>Implemented P4-based selective traffic mirroring to redirect suspicious TCP SYN packets, reducing attack without disturbing legitimate flow paths.</li>
-              <li>Built SYN-flood detection in the P4 data plane using per-flow connection state and packet rates for millisecond-level anomaly detection.</li>
-              <li>Validated mitigation correctness under SYN-flood attack scenarios while measuring latency overhead on legitimate traffic.</li>
+              <li>Implemented P4-based selective traffic mirroring to redirect suspicious TCP SYN packets without disrupting legitimate traffic flow.</li>
+              <li>Built SYN-flood detection directly in the P4 data plane using per-flow connection state and packet-rate analysis.</li>
+              <li>Validated mitigation behavior under attack scenarios while measuring latency overhead on real traffic patterns.</li>
             </ul>
           </article>
 
@@ -149,9 +231,9 @@
             <div class="timeline-meta">May 2025 - Aug 2025 | FairQuanta</div>
             <h3>Founding Engineer Intern</h3>
             <ul>
-              <li>Architected and shipped a real-time messaging and user profile system from zero to one for backend and Android teams.</li>
-              <li>Built Django REST APIs with MySQL and Redis caching, reducing average AI response time by 40% for automation agents.</li>
-              <li>Deployed services on AWS EC2 behind an ALB, supporting 50+ concurrent users with sub-200ms P95 response time.</li>
+              <li>Architected and shipped real-time messaging and profile systems from zero to one across backend and Android workflows.</li>
+              <li>Built Django REST APIs with MySQL and Redis caching, reducing average AI response time by 40%.</li>
+              <li>Deployed services on AWS EC2 behind an ALB, sustaining 50+ concurrent users with sub-200ms P95 latency.</li>
             </ul>
           </article>
 
@@ -159,47 +241,96 @@
             <div class="timeline-meta">Jul 2023 - Jul 2024 | NielsenIQ</div>
             <h3>Software Engineer</h3>
             <ul>
-              <li>Diagnosed and resolved Sev2 incidents involving latency spikes and data inconsistency, reducing recurring incidents by 90%.</li>
-              <li>Redesigned Redis caching layers for high-frequency queries, cutting backend DB load by 70% and improving system reliability.</li>
-              <li>Built RESTful API integrations and MongoDB image retrieval with a CNN inference pipeline processing 10,000+ FMCG images per day.</li>
-              <li>Conducted distributed load testing with JMeter, identifying bottlenecks and validating scalability improvements.</li>
+              <li>Resolved Sev2 latency and data consistency issues, cutting recurring incidents by 90% through root cause analysis and platform fixes.</li>
+              <li>Redesigned Redis caching layers for high-frequency queries, reducing backend database load by 70%.</li>
+              <li>Built RESTful APIs and an image retrieval pipeline with CNN inference processing more than 10,000 FMCG images per day.</li>
+              <li>Ran distributed load testing with JMeter to identify bottlenecks and validate scalability improvements.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel reveal" id="projects">
+        <div class="section-heading">
+          <p class="section-kicker">Projects</p>
+          <h2>Selected work with measurable engineering outcomes.</h2>
+        </div>
         <div class="section-title">$ tree ~/projects -L 2</div>
         <div class="projects">
-          <article class="project-card">
-            <div class="project-header">
-              <h3><a href="https://github.com/rajendrathalluru/Ringoram" target="_blank" rel="noreferrer">RingORAM</a></h3>
+          <article class="project-card project-featured">
+            <div class="project-topline">
+              <span class="project-chip">Distributed Security</span>
               <span>Jan 2025 - May 2025</span>
             </div>
+            <div class="project-header">
+              <h3>RingORAM</h3>
+              <a class="repo-link" href="https://github.com/rajendrathalluru/Ringoram" target="_blank" rel="noreferrer">Open Repo</a>
+            </div>
             <p class="project-stack">AWS, Java, Linux, Distributed Architecture</p>
+            <p class="project-summary">
+              A distributed Ring ORAM implementation designed to reduce
+              side-channel leakage while keeping access latency practical in a
+              multi-node cloud environment.
+            </p>
+            <div class="metric-row">
+              <div class="metric-box">
+                <span>overhead</span>
+                <strong>-78%</strong>
+              </div>
+              <div class="metric-box">
+                <span>latency</span>
+                <strong>38ms avg</strong>
+              </div>
+              <div class="metric-box">
+                <span>cluster</span>
+                <strong>4 AWS nodes</strong>
+              </div>
+            </div>
             <ul>
-              <li>Implemented Ring ORAM in Java to mask memory access patterns and reduce side-channel leakage across a 4-node AWS EC2 cluster.</li>
-              <li>Integrated XOR-based eviction mechanisms to reduce communication overhead by 78% compared to Path ORAM.</li>
-              <li>Deployed distributed architecture on AWS with LRU caching and async I/O, achieving 38ms average access latency under 8 concurrent clients.</li>
+              <li>Implemented Ring ORAM in Java to mask memory access patterns across a 4-node AWS EC2 cluster.</li>
+              <li>Integrated XOR-based eviction to reduce communication overhead by 78% compared to baseline Path ORAM.</li>
+              <li>Used LRU caching and async I/O to sustain low average latency under 8 concurrent clients.</li>
             </ul>
           </article>
 
-          <article class="project-card">
-            <div class="project-header">
-              <h3><a href="https://github.com/rajendrathalluru/vibecheck1" target="_blank" rel="noreferrer">VibeCheck</a></h3>
+          <article class="project-card project-featured">
+            <div class="project-topline">
+              <span class="project-chip">AI Security Platform</span>
               <span>Feb 2025 - Present</span>
             </div>
+            <div class="project-header">
+              <h3>VibeCheck</h3>
+              <a class="repo-link" href="https://github.com/rajendrathalluru/vibecheck1" target="_blank" rel="noreferrer">Open Repo</a>
+            </div>
             <p class="project-stack">Python, FastAPI, MCP, PostgreSQL, Docker, AI Agents</p>
+            <p class="project-summary">
+              A modular developer security platform that combines static
+              analysis, live testing, MCP workflows, and AI-assisted triage.
+            </p>
+            <div class="metric-row">
+              <div class="metric-box">
+                <span>precision</span>
+                <strong>92%</strong>
+              </div>
+              <div class="metric-box">
+                <span>recall</span>
+                <strong>88%</strong>
+              </div>
+              <div class="metric-box">
+                <span>coverage</span>
+                <strong>9 risk types</strong>
+              </div>
+            </div>
             <ul>
-              <li>Engineered a Python/FastAPI security platform with dual scan modes for static code analysis and live web vulnerability testing.</li>
-              <li>Built a modular vulnerability detection pipeline identifying CVEs, secret leakage, and misconfigurations across 9 risk categories.</li>
-              <li>Shipped an MCP server and IDE security scanning workflow, reaching 92% detection precision and 88% recall on benchmarked repositories.</li>
+              <li>Engineered a dual-mode Python/FastAPI security platform for static code analysis and live web vulnerability testing.</li>
+              <li>Built a vulnerability detection pipeline spanning CVEs, secret leakage, and configuration risk categories.</li>
+              <li>Shipped an MCP server and IDE-integrated scanning flow benchmarked across 20+ repositories.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="panel footer-panel">
+      <section class="panel footer-panel reveal">
         <div>
           <div class="section-title">$ echo $MISSION</div>
           <p class="mission">
@@ -209,8 +340,9 @@
           </p>
         </div>
         <div class="status-block">
-          <span class="status-label">session</span>
-          <strong id="uptime">uptime 00:00:00</strong>
+          <span class="status-label">availability</span>
+          <strong>Open to backend, systems, and infrastructure roles</strong>
+          <a class="footer-link" href="mailto:rajendrathallurus@gmail.com">rajendrathallurus@gmail.com</a>
         </div>
       </section>
     </main>
