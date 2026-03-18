@@ -1,0 +1,344 @@
+:root {
+  --bg: #08110d;
+  --bg-soft: #101a15;
+  --panel: rgba(11, 22, 17, 0.84);
+  --panel-strong: rgba(13, 28, 21, 0.94);
+  --line: rgba(120, 255, 185, 0.2);
+  --line-strong: rgba(120, 255, 185, 0.4);
+  --text: #e8f5ec;
+  --muted: #a8c3b1;
+  --accent: #7dffb9;
+  --accent-warm: #ffd479;
+  --shadow: 0 18px 80px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  background:
+    radial-gradient(circle at top left, rgba(125, 255, 185, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 212, 121, 0.1), transparent 26%),
+    linear-gradient(180deg, #0b130f 0%, #08110d 44%, #060b09 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(125, 255, 185, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 255, 185, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), black 20%, black 80%, transparent);
+  pointer-events: none;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.28) 0, transparent 1px),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.15) 0, transparent 1px),
+    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.2) 0, transparent 1px);
+  background-size: 180px 180px;
+  pointer-events: none;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 60px;
+}
+
+.panel {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.prompt-line,
+.section-title,
+.card-label,
+.fact-key,
+.status-label {
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+}
+
+.prompt-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.prompt-user {
+  color: var(--accent-warm);
+}
+
+.prompt-path {
+  color: #8db6ff;
+}
+
+.hero-grid,
+.two-column,
+.footer-panel {
+  display: grid;
+  gap: 24px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.7fr) minmax(290px, 0.9fr);
+  align-items: start;
+}
+
+.two-column,
+.footer-panel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  letter-spacing: -0.06em;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+.hero-copy,
+.mission {
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.boot-log {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(125, 255, 185, 0.16);
+  background: rgba(5, 12, 9, 0.62);
+}
+
+.boot-log span {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.contact-card {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(3, 10, 7, 0.62);
+}
+
+.contact-card ul,
+.skills-board,
+.timeline,
+.projects,
+.project-card ul {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-card ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.contact-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px dashed rgba(125, 255, 185, 0.12);
+  padding-bottom: 8px;
+}
+
+.contact-card span,
+.muted,
+.timeline-meta,
+.project-stack {
+  color: var(--muted);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.entry header,
+.project-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.entry p,
+.project-card p,
+.timeline-item li {
+  line-height: 1.75;
+}
+
+.facts-grid,
+.skills-board,
+.projects {
+  display: grid;
+  gap: 16px;
+}
+
+.facts-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.fact,
+.skill-group,
+.project-card,
+.timeline-item {
+  padding: 16px;
+  border: 1px solid rgba(125, 255, 185, 0.12);
+  border-radius: 16px;
+  background: rgba(4, 12, 8, 0.48);
+}
+
+.skill-group h3,
+.project-card h3,
+.timeline-item h3 {
+  margin-bottom: 10px;
+}
+
+.skills-board {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.timeline-item ul,
+.project-card ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.projects {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.status-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(135deg, rgba(125, 255, 185, 0.08), rgba(255, 212, 121, 0.06));
+}
+
+#uptime {
+  margin-top: 8px;
+  font-size: 1.5rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@media (max-width: 920px) {
+  .hero-grid,
+  .two-column,
+  .footer-panel,
+  .skills-board,
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .entry header,
+  .project-header,
+  .contact-card li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 20px, 100%);
+    padding-top: 20px;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    line-height: 1.06;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
