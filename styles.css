@@ -1,16 +1,16 @@
 :root {
-  --bg: #08110d;
-  --bg-soft: #101a15;
-  --panel: rgba(11, 22, 17, 0.84);
-  --panel-strong: rgba(13, 28, 21, 0.94);
-  --line: rgba(120, 255, 185, 0.16);
-  --line-strong: rgba(120, 255, 185, 0.36);
-  --text: #e8f5ec;
-  --muted: #a8c3b1;
-  --accent: #7dffb9;
-  --accent-warm: #ffd479;
-  --accent-cold: #8db6ff;
-  --shadow: 0 20px 80px rgba(0, 0, 0, 0.35);
+  --bg: #020402;
+  --bg-soft: #050805;
+  --panel: rgba(2, 7, 2, 0.94);
+  --panel-strong: rgba(1, 4, 1, 0.98);
+  --line: rgba(98, 255, 98, 0.15);
+  --line-strong: rgba(98, 255, 98, 0.3);
+  --text: #b8ffb8;
+  --muted: #73b873;
+  --accent: #62ff62;
+  --accent-warm: #d4ff7a;
+  --accent-cold: #7dffb9;
+  --shadow: 0 0 0 1px rgba(98, 255, 98, 0.04);
 }
 
 * {
@@ -27,9 +27,8 @@ body {
   color: var(--text);
   font-family: "IBM Plex Mono", monospace;
   background:
-    radial-gradient(circle at top left, rgba(125, 255, 185, 0.1), transparent 30%),
-    radial-gradient(circle at top right, rgba(255, 212, 121, 0.08), transparent 22%),
-    linear-gradient(180deg, #0b130f 0%, #08110d 44%, #050907 100%);
+    radial-gradient(circle at top left, rgba(98, 255, 98, 0.05), transparent 24%),
+    linear-gradient(180deg, #030503 0%, #010201 48%, #000000 100%);
 }
 
 body::before {
@@ -37,10 +36,10 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(125, 255, 185, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 255, 185, 0.035) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), black 18%, black 82%, transparent);
+    linear-gradient(rgba(98, 255, 98, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(98, 255, 98, 0.03) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), black 18%, black 82%, transparent);
   pointer-events: none;
 }
 
@@ -52,7 +51,7 @@ body::before {
 }
 
 .noise {
-  opacity: 0.08;
+  opacity: 0.04;
   background-image:
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.28) 0, transparent 1px),
     radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.15) 0, transparent 1px),
@@ -61,20 +60,20 @@ body::before {
 }
 
 .ambient-left {
-  background: radial-gradient(circle at 18% 16%, rgba(125, 255, 185, 0.11), transparent 18%);
+  background: radial-gradient(circle at 18% 16%, rgba(98, 255, 98, 0.08), transparent 16%);
 }
 
 .ambient-right {
-  background: radial-gradient(circle at 84% 12%, rgba(141, 182, 255, 0.1), transparent 17%);
+  background: radial-gradient(circle at 84% 12%, rgba(98, 255, 98, 0.04), transparent 15%);
 }
 
 .topbar {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(18px);
-  background: rgba(6, 11, 8, 0.56);
-  border-bottom: 1px solid rgba(125, 255, 185, 0.08);
+  backdrop-filter: blur(6px);
+  background: rgba(1, 3, 1, 0.92);
+  border-bottom: 1px solid rgba(98, 255, 98, 0.12);
 }
 
 .topbar-inner {
@@ -101,7 +100,7 @@ body::before {
   height: 10px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 18px rgba(125, 255, 185, 0.8);
+  box-shadow: 0 0 12px rgba(98, 255, 98, 0.75);
 }
 
 .nav {
@@ -130,10 +129,10 @@ body::before {
   margin-bottom: 20px;
   padding: 26px;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 10px;
   background: linear-gradient(180deg, var(--panel-strong), var(--panel));
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(4px);
   overflow: hidden;
 }
 
@@ -142,7 +141,7 @@ body::before {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(98, 255, 98, 0.05);
   pointer-events: none;
 }
 
@@ -289,13 +288,13 @@ h3 {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, rgba(125, 255, 185, 0.24), rgba(125, 255, 185, 0.12));
-  border-color: rgba(125, 255, 185, 0.26);
+  background: rgba(98, 255, 98, 0.12);
+  border-color: rgba(98, 255, 98, 0.32);
 }
 
 .button-secondary {
-  background: rgba(141, 182, 255, 0.08);
-  border-color: rgba(141, 182, 255, 0.2);
+  background: rgba(98, 255, 98, 0.06);
+  border-color: rgba(98, 255, 98, 0.18);
 }
 
 .button-ghost {
@@ -320,9 +319,9 @@ h3 {
 .status-block,
 .about-note {
   padding: 16px;
-  border: 1px solid rgba(125, 255, 185, 0.12);
-  border-radius: 18px;
-  background: rgba(4, 12, 8, 0.48);
+  border: 1px solid rgba(98, 255, 98, 0.12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.34);
 }
 
 .signal-card {
@@ -341,9 +340,9 @@ h3 {
   display: grid;
   gap: 10px;
   padding: 18px;
-  border-radius: 18px;
-  border: 1px solid rgba(125, 255, 185, 0.16);
-  background: rgba(5, 12, 9, 0.62);
+  border-radius: 8px;
+  border: 1px solid rgba(98, 255, 98, 0.18);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .boot-log span,
@@ -360,9 +359,9 @@ h3 {
 .contact-card,
 .terminal-card {
   padding: 18px;
-  border-radius: 18px;
+  border-radius: 8px;
   border: 1px solid var(--line);
-  background: rgba(3, 10, 7, 0.62);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .contact-card ul,
@@ -385,7 +384,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 14px;
-  border-bottom: 1px dashed rgba(125, 255, 185, 0.12);
+  border-bottom: 1px dashed rgba(98, 255, 98, 0.14);
   padding-bottom: 8px;
 }
 
@@ -498,8 +497,8 @@ a:hover {
 
 .project-featured {
   background:
-    radial-gradient(circle at top right, rgba(141, 182, 255, 0.08), transparent 28%),
-    rgba(4, 12, 8, 0.48);
+    radial-gradient(circle at top right, rgba(98, 255, 98, 0.06), transparent 28%),
+    rgba(0, 0, 0, 0.38);
 }
 
 .project-topline {
@@ -528,9 +527,9 @@ a:hover {
 
 .metric-box {
   padding: 12px;
-  border-radius: 14px;
-  background: rgba(125, 255, 185, 0.06);
-  border: 1px solid rgba(125, 255, 185, 0.12);
+  border-radius: 6px;
+  background: rgba(98, 255, 98, 0.04);
+  border: 1px solid rgba(98, 255, 98, 0.12);
   display: grid;
   gap: 6px;
 }
@@ -547,7 +546,7 @@ a:hover {
   justify-content: center;
   gap: 10px;
   border: 1px solid var(--line-strong);
-  background: linear-gradient(135deg, rgba(125, 255, 185, 0.08), rgba(255, 212, 121, 0.06));
+  background: rgba(0, 0, 0, 0.42);
 }
 
 .status-block strong {
@@ -602,7 +601,7 @@ a:hover {
 
   .panel {
     padding: 18px;
-    border-radius: 18px;
+    border-radius: 8px;
   }
 
   h1 {
